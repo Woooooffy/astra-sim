@@ -274,6 +274,7 @@ void parse_args(int argc, char* argv[]) {
 int main(int argc, char* argv[]) {
     LogComponentEnable("OnOffApplication", LOG_INFO);
     LogComponentEnable("PacketSink", LOG_INFO);
+    LogComponentEnable("GENERIC_SIMULATION", LOG_DEBUG);
 
     cout << "ASTRA-sim + NS3" << endl;
 
@@ -281,6 +282,12 @@ int main(int argc, char* argv[]) {
     parse_args(argc, argv);
     AstraSim::LoggerFactory::init(logging_configuration);
     read_logical_topo_config(logical_topology_configuration, logical_dims);
+
+    cout << "Debug: setup logical topology with logical dims: ";
+    for (const auto& dim : logical_dims) {
+        cout << dim << " ";
+    }
+    cout << endl;
 
     // Setup network & System layer.
     vector<ASTRASimNetwork*> networks(num_npus, nullptr);
@@ -298,11 +305,15 @@ int main(int argc, char* argv[]) {
             queues_per_dim, injection_scale, comm_scale, rendezvous_protocol);
     }
 
+    cout << "Finish setting up network and system layer." << endl;
+
     // Initialize ns3 simulation.
     if (auto ok = setup_ns3_simulation(network_configuration); ok == -1) {
         std::cerr << "Fail to setup ns3 simulation." << std::endl;
         return -1;
     }
+
+    cout << "Finish setting up ns3 simulation." << endl;
 
     // Tell workload layer to schedule first events.
     for (int i = 0; i < num_npus; i++) {
