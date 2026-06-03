@@ -8,7 +8,7 @@ EXAMPLES_DIR="${ASTRA_SIM_DIR:?}"/examples
 NS3_DIR="${ASTRA_SIM_DIR:?}"/extern/network_backend/ns-3
 
 WORKLOAD="${EXAMPLES_DIR:?}"/workload/microbenchmarks/all_reduce/8npus_1MB/all_reduce
-SYSTEM="${EXAMPLES_DIR:?}"/system/custom_collectives/custom_collective_ns3.json
+SYSTEM="${EXAMPLES_DIR:?}/system/custom_collectives/custom_collective_ns3.json"
 NETWORK="${NS3_DIR:?}"/scratch/config/config_clos.txt
 LOGICAL_TOPOLOGY="${EXAMPLES_DIR:?}"/network/ns3/sample_8nodes_1D.json
 
@@ -19,7 +19,9 @@ cd "${NS3_DIR}/build/scratch"
 
 echo "Running simulation with WORKLOAD: ${WORKLOAD}"
 
-./ns3.42-AstraSimNetwork-default \
+
+gdb --args \
+    ./ns3.42-AstraSimNetwork-default \
     --workload-configuration=${WORKLOAD} \
     --system-configuration=${SYSTEM} \
     --network-configuration=${NETWORK} \
