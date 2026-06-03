@@ -72,6 +72,15 @@ target_link_libraries(AstraSim PUBLIC fmt::fmt)
 target_link_libraries(AstraSim PUBLIC spdlog::spdlog)
 target_link_libraries(AstraSim PUBLIC yaml-cpp)
 
+
+find_package(Protobuf REQUIRED)
+find_package(absl REQUIRED)
+target_link_libraries(AstraSim PUBLIC
+    absl::base
+    absl::strings
+    absl::synchronization
+    absl::log_internal_check_op
+)
 # Same as above.
 if(DEFINED ENV{PROTOBUF_FROM_SOURCE} AND "$ENV{PROTOBUF_FROM_SOURCE}" STREQUAL "True")
     target_link_libraries(AstraSim PUBLIC protobuf::libprotobuf)
