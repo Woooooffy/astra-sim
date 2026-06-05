@@ -7,8 +7,10 @@ SCRIPT_DIR=$(dirname "$(realpath "$0")")
 ASTRA_SIM_DIR="${SCRIPT_DIR:?}/../.."
 
 # paths
-WORKLOAD="${ASTRA_SIM_DIR:?}/examples/workload/microbenchmarks/all_gather/8npus_1MB/all_gather"
-SYSTEM="${SCRIPT_DIR:?}/system.json"
+#WORKLOAD="${ASTRA_SIM_DIR:?}/examples/workload/microbenchmarks/all_gather/8npus_1MB/all_gather"
+WORKLOAD="${SCRIPT_DIR:?}/taccl_all_gather/all_gather"
+#SYSTEM="${SCRIPT_DIR:?}/system.json"
+SYSTEM="${SCRIPT_DIR:?}/system_taccl.json"
 
 NS3_DIR="${ASTRA_SIM_DIR:?}"/extern/network_backend/ns-3
 

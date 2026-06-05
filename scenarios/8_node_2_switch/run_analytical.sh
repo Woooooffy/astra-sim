@@ -15,8 +15,8 @@ PROJECT_DIR="${SCRIPT_DIR:?}/../.."
 
 # paths
 ASTRA_SIM="${PROJECT_DIR:?}/build/astra_analytical/build/bin/AstraSim_Analytical_Congestion_Unaware"
-WORKLOAD="${PROJECT_DIR:?}/examples/workload/microbenchmarks/all_gather/8npus_1MB/all_gather"
-#WORKLOAD="${SCRIPT_DIR:?}/taccl_all_gather/all_gather"
+#WORKLOAD="${PROJECT_DIR:?}/examples/workload/microbenchmarks/all_gather/8npus_1MB/all_gather"
+WORKLOAD="${SCRIPT_DIR:?}/taccl_all_gather/all_gather"
 
 
 #SYSTEM="${SCRIPT_DIR:?}/system.json"
