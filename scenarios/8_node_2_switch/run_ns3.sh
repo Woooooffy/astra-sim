@@ -2,17 +2,21 @@
 set -e
 set -x
 
-SCRIPT_DIR=$(dirname "$(realpath $0)")
-ASTRA_SIM_DIR="${SCRIPT_DIR:?}"/../../..
-EXAMPLES_DIR="${ASTRA_SIM_DIR:?}"/examples
+# find the absolute path to this script
+SCRIPT_DIR=$(dirname "$(realpath "$0")")
+ASTRA_SIM_DIR="${SCRIPT_DIR:?}/../.."
+
+# paths
+WORKLOAD="${ASTRA_SIM_DIR:?}/examples/workload/microbenchmarks/all_gather/8npus_1MB/all_gather"
+SYSTEM="${SCRIPT_DIR:?}/system.json"
+
 NS3_DIR="${ASTRA_SIM_DIR:?}"/extern/network_backend/ns-3
 
-WORKLOAD="${EXAMPLES_DIR:?}"/workload/microbenchmarks/all_reduce/8npus_1MB/all_reduce
-SYSTEM="${EXAMPLES_DIR:?}"/system/custom_collectives/custom_collective_ns3.json
-NETWORK="${NS3_DIR:?}"/scratch/config/config_old.txt
-LOGICAL_TOPOLOGY="${EXAMPLES_DIR:?}"/network/ns3/sample_8nodes_1D.json
 
-MEMORY="${EXAMPLES_DIR:?}"/remote_memory/analytical/no_memory_expansion.json
+NETWORK="${NS3_DIR:?}"/scratch/config/config_new.txt
+LOGICAL_TOPOLOGY="${SCRIPT_DIR:?}"/ns3_logical_topo.json
+
+MEMORY="${ASTRA_SIM_DIR:?}/examples/remote_memory/analytical/no_memory_expansion.json"
 COMM_GROUP_CONFIGURATION="empty"
 
 cd "${NS3_DIR}/build/scratch"
