@@ -13,7 +13,7 @@ SYSTEM="${SCRIPT_DIR:?}/system.json"
 NS3_DIR="${ASTRA_SIM_DIR:?}"/extern/network_backend/ns-3
 
 
-NETWORK="${NS3_DIR:?}"/scratch/config/config_new.txt
+NETWORK="${NS3_DIR:?}"/scratch/config/config.txt
 LOGICAL_TOPOLOGY="${SCRIPT_DIR:?}"/ns3_logical_topo.json
 
 MEMORY="${ASTRA_SIM_DIR:?}/examples/remote_memory/analytical/no_memory_expansion.json"

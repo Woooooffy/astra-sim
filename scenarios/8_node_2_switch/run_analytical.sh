@@ -15,10 +15,12 @@ PROJECT_DIR="${SCRIPT_DIR:?}/../.."
 
 # paths
 ASTRA_SIM="${PROJECT_DIR:?}/build/astra_analytical/build/bin/AstraSim_Analytical_Congestion_Unaware"
-#WORKLOAD="${SCRIPT_DIR:?}/workload/all_reduce"
 WORKLOAD="${PROJECT_DIR:?}/examples/workload/microbenchmarks/all_gather/8npus_1MB/all_gather"
+#WORKLOAD="${SCRIPT_DIR:?}/taccl_all_gather/all_gather"
 
-SYSTEM="${SCRIPT_DIR:?}/system.json"
+
+#SYSTEM="${SCRIPT_DIR:?}/system.json"
+SYSTEM="${SCRIPT_DIR:?}/system_taccl.json"
 NETWORK="${SCRIPT_DIR:?}/analytical_network.yml"
 REMOTE_MEMORY="${PROJECT_DIR:?}/examples/remote_memory/analytical/no_memory_expansion.json"
 
