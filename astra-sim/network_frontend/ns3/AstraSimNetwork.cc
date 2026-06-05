@@ -274,7 +274,7 @@ void parse_args(int argc, char* argv[]) {
 int main(int argc, char* argv[]) {
     LogComponentEnable("OnOffApplication", LOG_INFO);
     LogComponentEnable("PacketSink", LOG_INFO);
-    LogComponentEnable("GENERIC_SIMULATION", LOG_DEBUG);
+    // LogComponentEnable("GENERIC_SIMULATION", LOG_DEBUG);
 
     cout << "ASTRA-sim + NS3" << endl;
 
