@@ -7,7 +7,8 @@ SCRIPT_DIR=$(dirname "$(realpath "$0")")
 ASTRA_SIM_DIR="${SCRIPT_DIR:?}/../.."
 
 # paths
-WORKLOAD="${SCRIPT_DIR:?}/workload/all_reduce"
+#WORKLOAD="${SCRIPT_DIR:?}/workload/all_reduce"
+WORKLOAD="${ASTRA_SIM_DIR:?}/all_reduce/16npus_1MB/all_reduce"
 SYSTEM="${SCRIPT_DIR:?}/system.json"
 
 NS3_DIR="${ASTRA_SIM_DIR:?}"/extern/network_backend/ns-3
@@ -23,7 +24,7 @@ cd "${NS3_DIR}/build/scratch"
 
 echo "Running simulation with WORKLOAD: ${WORKLOAD}"
 
-./ns3.42-AstraSimNetwork-default \
+./ns3.42-AstraSimNetwork-debug \
     --workload-configuration=${WORKLOAD} \
     --system-configuration=${SYSTEM} \
     --network-configuration=${NETWORK} \

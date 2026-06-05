@@ -1,0 +1,6 @@
+{
+  "scheduling-policy": "FIFO",
+  "preferred-dataset-splits": 1,
+  "all-gather-implementation-custom": ["../../../../scenarios/msccl_allgather/workload/allgather"],
+  "local-mem-bw": 900
+}
