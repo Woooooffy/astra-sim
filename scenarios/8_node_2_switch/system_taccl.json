@@ -1,0 +1,6 @@
+{
+  "scheduling-policy": "FIFO",
+  "preferred-dataset-splits": 4,
+  "all-reduce-implementation-custom": ["../../../../scenarios/8_node_2_switch/taccl_all_gather/all_gather"],
+  "local-mem-bw": 900
+}
