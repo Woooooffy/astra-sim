@@ -307,7 +307,7 @@ int main(int argc, char* argv[]) {
 
     // Tell workload layer to schedule first events.
     for (int i = 0; i < num_npus; i++) {
-        cout << "Scheduling first events for npu " << i << endl;
+        // cout << "Scheduling first events for npu " << i << endl;
         systems[i]->workload->fire();
     }
 
