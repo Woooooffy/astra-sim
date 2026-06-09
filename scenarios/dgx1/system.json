@@ -1,0 +1,6 @@
+{
+  "scheduling-policy": "FIFO",
+  "preferred-dataset-splits": 6,
+  "all-reduce-implementation-custom": ["../../../../scenarios/dgx1/msccl_all_gather/all_gather"],
+  "local-mem-bw": 900
+}
