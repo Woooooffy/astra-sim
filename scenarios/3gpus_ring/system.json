@@ -1,0 +1,6 @@
+{
+  "scheduling-policy": "FIFO",
+  "preferred-dataset-splits": 1,
+  "all-reduce-implementation-custom": ["../../../../scenarios/3gpus_ring/4KiB_input/all_gather"],
+  "local-mem-bw": 900
+}
