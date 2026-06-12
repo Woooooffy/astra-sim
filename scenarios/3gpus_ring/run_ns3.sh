@@ -8,7 +8,7 @@ ASTRA_SIM_DIR="${SCRIPT_DIR:?}/../.."
 
 # paths
 #WORKLOAD="${ASTRA_SIM_DIR:?}/examples/workload/microbenchmarks/all_gather/8npus_1MB/all_gather"
-WORKLOAD="${SCRIPT_DIR:?}/4KiB_input/all_gather"
+WORKLOAD="${SCRIPT_DIR:?}/4MiB_in/all_gather"
 #SYSTEM="${SCRIPT_DIR:?}/system.json"
 SYSTEM="${SCRIPT_DIR:?}/system.json"
 
