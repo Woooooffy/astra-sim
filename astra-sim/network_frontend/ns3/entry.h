@@ -138,6 +138,9 @@ void send_flow(int src_id, int dst, int maxPacketCount,
   sim_send_waiting_hash[send_event_key] = send_event;
 
   // Create a queue pair and schedule within the ns3 simulator.
+  std::cout << "send_flow src=" << src_id << " dst=" << dst
+            << " bytes=" << maxPacketCount << " tag=" << tag
+            << " at t=" << Simulator::Now().GetNanoSeconds() << std::endl;
   RdmaClientHelper clientHelper(
       pg, serverAddress[src_id], serverAddress[dst], port, dport,
       maxPacketCount,
@@ -258,6 +261,9 @@ void qp_finish_print_log(FILE *fout, Ptr<RdmaQueuePair> q) {
 // common.h::SetupNetwork().
 void qp_finish(FILE *fout, Ptr<RdmaQueuePair> q) {
   uint32_t sid = ip_to_node_id(q->sip), did = ip_to_node_id(q->dip);
+  std::cout << "qp_finish src=" << sid << " dst=" << did
+            << " bytes=" << q->m_size
+            << " at t=" << Simulator::Now().GetNanoSeconds() << std::endl;
   qp_finish_print_log(fout, q);
 
   // remove rxQp from the receiver.
