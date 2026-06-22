@@ -1,6 +1,6 @@
 {
   "scheduling-policy": "FIFO",
   "preferred-dataset-splits": 1,
-  "all-reduce-implementation-custom": ["../../../../scenarios/3nodes/in/all_gather"],
+  "all-gather-implementation-custom": ["../../../../scenarios/3nodes/in/all_gather"],
   "local-mem-bw": 900
 }
